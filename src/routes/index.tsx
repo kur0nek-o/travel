@@ -1,21 +1,13 @@
 import React from "react"
 import { Switch, Route } from "react-router-dom"
 
-import Home from '../pages/Home'
-import About from "../pages/About"
-import Users from "../pages/Users"
+import ImportSPPD from "../pages/ImportSPPD"
 
 const Routes = () => {
     return (
         <Switch>
-            <Route path="/about">
-                <About />
-            </Route>
-            <Route path="/users">
-                <Users />
-            </Route>
             <Route path="/">
-                <Home />
+                <ImportSPPD />
             </Route>
         </Switch>
     )
