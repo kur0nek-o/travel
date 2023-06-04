@@ -1,23 +1,32 @@
-import React from 'react';
+import React from 'react'
+import {
+  BrowserRouter as Router,
+  NavLink
+} from "react-router-dom"
+import Routes from './routes'
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <Router>
+      <div>
+        <nav className='mb-5'>
+          <ul>
+            <li>
+              <NavLink exact to="/" activeClassName='font-bold'>Home</NavLink>
+            </li>
+            <li>
+              <NavLink to="/about" activeClassName='font-bold'>About</NavLink>
+            </li>
+            <li>
+              <NavLink to="/users" activeClassName='font-bold'>Users</NavLink>
+            </li>
+          </ul>
+        </nav>
 
-export default App;
+        <hr />
+
+        <Routes />
+      </div>
+    </Router>
+  )
+}
